@@ -38,6 +38,7 @@ class _QuizScreenState extends State<QuizScreen> {
       icon: SimpleIcons.flutter,
     ),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,7 +47,11 @@ class _QuizScreenState extends State<QuizScreen> {
       child: GridView(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
-        children: topics.map((topic) => QuizItem(topic: topic)).toList(),
+        children: topics
+            .map((topic) => QuizItem(
+                  topic: topic,
+                ))
+            .toList(),
       ),
     );
   }

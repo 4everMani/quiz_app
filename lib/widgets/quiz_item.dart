@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/models/topic.dart';
 
+import '../screens/question_screen.dart';
+
 class QuizItem extends StatelessWidget {
   final Topic topic;
   const QuizItem({required this.topic});
 
+  void openQuiz(String topicName, BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(QuestionScreen.routeName,
+        arguments: {'topicName': topicName});
+    print(topicName);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
+      onTap: (() => openQuiz(topic.name!, context)),
       child: Container(
         padding: EdgeInsets.all(12),
         decoration: BoxDecoration(

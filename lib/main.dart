@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/screens/question_screen.dart';
 import 'package:quiz_app/screens/quiz_screen.dart';
 import 'package:quiz_app/screens/tabs_screen.dart';
 
@@ -33,6 +34,10 @@ class MyApp extends StatelessWidget {
             ),
           ),
           body: const TabsScreen()),
+      routes: {
+        // '/': (ctx) => const CategoriesScreen(),
+        QuestionScreen.routeName: (ctx) => QuestionScreen(),
+      },
     );
   }
 }
