@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ButtonSection extends StatelessWidget {
-  const ButtonSection({super.key});
+  final Function() nextQuestion;
+  final Function() previousQuestion;
+  final Function() submitQuiz;
+  const ButtonSection(
+      {required this.nextQuestion,
+      required this.previousQuestion,
+      required this.submitQuiz});
 
   @override
   Widget build(BuildContext context) {
@@ -20,17 +26,17 @@ class ButtonSection extends StatelessWidget {
         width: 500,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
+          children: [
             IconButton(
-              onPressed: null,
-              icon: Icon(
+              onPressed: (() => previousQuestion()),
+              icon: const Icon(
                 Icons.arrow_back,
                 color: Colors.white,
               ),
             ),
             TextButton(
-                onPressed: null,
-                child: Text(
+                onPressed: (() => submitQuiz()),
+                child: const Text(
                   "Submit",
                   style: TextStyle(
                       color: Colors.white,
@@ -38,8 +44,8 @@ class ButtonSection extends StatelessWidget {
                       fontSize: 20),
                 )),
             IconButton(
-                onPressed: null,
-                icon: Icon(
+                onPressed: (() => nextQuestion()),
+                icon: const Icon(
                   Icons.arrow_forward,
                   color: Colors.white,
                 ))

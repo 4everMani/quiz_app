@@ -1,0 +1,410 @@
+{
+    "DotNet": [
+        {
+            "question": "Which of the following testing is also known as white-box testing?",
+            "options": [
+                "Structural testing",
+                "Error guessing technique",
+                "Design based testing",
+                "None of the above"
+            ],
+            "correctAnswer": "Structural testing"
+        },
+        {
+            "question": "Which is not the right approach of Incremental testing approach?",
+            "options": [
+                "Bottom-up approach",
+                "Functional incrimination",
+                "Top-down approach",
+                "Big bang approach"
+            ],
+            "correctAnswer": "Big bang approach"
+        },
+        {
+            "question": "Impact analysis helps us to decide which of the following testing?",
+            "options": [
+                "Combination of all",
+                "Black Box testing",
+                "Grey box testing",
+                "White-box testing"
+            ],
+            "correctAnswer": "Black Box testing"
+        },
+        {
+            "question": "Does the customer get a 100% bug-free product?",
+            "options": [
+                "The testing team is not good",
+                "Developers are super",
+                "Product is old",
+                "All of the above"
+            ],
+            "correctAnswer": "The testing team is not good"
+        },
+        {
+            "question": "Where the properties can be declared?",
+            "options": [
+                "Class",
+                "Struct",
+                "Interface",
+                "All of the mentioned"
+            ],
+            "correctAnswer": "All of the mentioned"
+        },
+        {
+            "question": "Select the modifiers which can be used with the properties?",
+            "options": [
+                "Private",
+                "Public",
+                "Protected Internal",
+                "All of the mentioned"
+            ],
+            "correctAnswer": "All of the mentioned"
+        },
+        {
+            "question": "Which one of the following is not a DotNet feature?",
+            "options": [
+                "Object-oriented",
+                "Use of pointers",
+                "Portable",
+                "Dynamic and Extensible"
+            ],
+            "correctAnswer": "Use of pointers"
+        },
+        {
+            "question": "Which of these cannot be used for a variable name in DotNet?",
+            "options": [
+                "identifier & keyword",
+                "identifier",
+                "keyword",
+                "none of the mentioned"
+            ],
+            "correctAnswer": "keyword"
+        },
+        {
+            "question": "Choose the namespace in which the interface IEnumerable is declared?",
+            "options": [
+                "System.Collections",
+                "System.Collections.Generic",
+                "Both above",
+                "None of the mentioned"
+            ],
+            "correctAnswer": "System.Collections.Generic"
+        },
+        {
+            "question": "Which of the following is not a valid phase of SDLC (Software Development Life Cycle)?",
+            "options": [
+                "Testing closure",
+                "Deployment phase",
+                "Requirement Phase",
+                "Testing Phase"
+            ],
+            "correctAnswer": "Testing closure"
+        }
+    ],
+    "JavaScript":[
+        {
+            "question": "Which of the following is not javascript data types?",
+            "options": [
+                "Null type",
+                "Undefined type",
+                "Number type",
+                "All of the mentioned"
+            ],
+            "correctAnswer": "All of the mentioned"
+        },
+        {
+            "question": "Which of the following object is the main entry point to all client-side JavaScript features and APIs?",
+            "options": [
+                "Position",
+                "Window",
+                "Standard",
+                "Location"
+            ],
+            "correctAnswer": "Window"
+        },
+        {
+            "question": "Which of the following can be used to call a JavaScript Code Snippet?",
+            "options": [
+                "Function/Method",
+                "Preprocessor",
+                "Triggering Event",
+                "RMI"
+            ],
+            "correctAnswer": "Function/Method"
+        },
+        {
+            "question": "Which of the following scoping type does JavaScript use?",
+            "options": [
+                "Sequential",
+                "Segmental",
+                "Lexical",
+                "Literal"
+            ],
+            "correctAnswer": "Lexical"
+        },
+        {
+            "question": "Why JavaScript Engine is needed?",
+            "options": [
+                "Compiling & Interpreting the JavaScript",
+                "Parsing the javascript",
+                "Interpreting the JavaScript",
+                "Compiling the JavaScript"
+            ],
+            "correctAnswer": "Interpreting the JavaScript"
+        },
+        {
+            "question": "Which of the following is not a framework?",
+            "options": [
+                "JavaScript .NET",
+                "JavaScript",
+                "Cocoa JS",
+                "jQuery"
+            ],
+            "correctAnswer": "JavaScript"
+        },
+        {
+            "question": "Which of the following is the property that is triggered in response to JS errors?",
+            "options": [
+                "onclick",
+                "onerror",
+                "onmessage",
+                "onexception"
+            ],
+            "correctAnswer": "onerror"
+        },
+        {
+            "question": "Which of the following is not an error in JavaScript?",
+            "options": [
+                "Missing of Bracket",
+                "Division by zero",
+                "Syntax error",
+                "Missing of semicolons"
+            ],
+            "correctAnswer": "Division by zero"
+        },
+        {
+            "question": "The maximum number of global symbols a module can define is ____________",
+            "options": [
+                "2",
+                "3",
+                "1",
+                "4"
+            ],
+            "correctAnswer": "1"
+        },
+        {
+            "question": "The scope of a function is also called as ________",
+            "options": [
+                "Predefined function",
+                "Module function",
+                "Public function",
+                "Private function"
+            ],
+            "correctAnswer": "Module function"
+        }
+    ],
+    "NodeJs":[
+        {
+            "question": "Which of the following command is used to start a REPL session?",
+            "options": [
+                "$ node",
+                "$ node start",
+                "$ node repl",
+                "$ node console"
+            ],
+            "correctAnswer": "$ node"
+        },
+        {
+            "question": "Which of the following command is used to install the Node.js express module?",
+            "options": [
+                "$ npm install express",
+                "$ node install express",
+                "$ install express",
+                "None of the above"
+            ],
+            "correctAnswer": "$ npm install express"
+        },
+        {
+            "question": "Which of the following extension is used to save the Node.js files?",
+            "options": [
+                ".node",
+                ".js",
+                ".java",
+                ".txt"
+            ],
+            "correctAnswer": ".js"
+        },
+        {
+            "question": "Which of the following module is not a built-in node module?",
+            "options": [
+                "zlib",
+                "https",
+                "dgram",
+                "fsread"
+            ],
+            "correctAnswer": "fsread"
+        },
+        {
+            "question": "What does the fs module stand for?",
+            "options": [
+                "File Service",
+                "File System",
+                "File Store",
+                "File Sharing"
+            ],
+            "correctAnswer": "File System"
+        },
+        {
+            "question": " Which of the following template engines can be used with Node.js?",
+            "options": [
+                "Jade",
+                "Vash",
+                "Handlebars",
+                "All of the above"
+            ],
+            "correctAnswer": "Handlebars"
+        },
+        {
+            "question": "Which of the following method is used to return the current working directory of the process?",
+            "options": [
+                "cwd();",
+                "cwd();",
+                "pwd();",
+                "None of the above."
+            ],
+            "correctAnswer": "cwd();"
+        },
+        {
+            "question": "What is the best practice to do in your code to improve the performance of your application?",
+            "options": [
+                "Using gzip compression.",
+                "Don't use synchronous functions.",
+                "Do logging correctly.",
+                "Handle exceptions properly."
+            ],
+            "correctAnswer": "Using gzip compression."
+        },
+        {
+            "question": "What is the default scope in the Node.js application?",
+            "options": [
+                "Global",
+                "Local",
+                "Global Function",
+                "Local to object"
+            ],
+            "correctAnswer": "Local"
+        },
+        {
+            "question": "Which of the following engine Node in core?",
+            "options": [
+                "Chrome V8",
+                "Microsoft Chakra",
+                "SpiderMonkey",
+                "Node En"
+            ],
+            "correctAnswer": "Chrome V8"
+        }
+    ],
+    "Dart":[
+        {
+            "question": "Flutter developed by?",
+            "options": [
+                "Oracle",
+                "Facebook",
+                "Google",
+                "IBM"
+            ],
+            "correctAnswer": "Google"
+        },
+        {
+            "question": "Flutter is not a language; it is an SDK. ",
+            "options": [
+                "TRUE",
+                "FALSE",
+                "Can be true or false",
+                "Can not say"
+            ],
+            "correctAnswer": "TRUE"
+        },
+        {
+            "question": "The first alpha version of Flutter was released in ?",
+            "options": [
+                "2016",
+                "2017",
+                "2018",
+                "2019"
+            ],
+            "correctAnswer": "2017"
+        },
+        {
+            "question": " A widget that allows us to refresh the screen is called a ____________.",
+            "options": [
+                "Stateless widgets",
+                "Stateful widget",
+                "Statebuild widget",
+                "All of the above"
+            ],
+            "correctAnswer": "Stateful widget"
+        },
+        {
+            "question": "Which function is responsible for starting the program?",
+            "options": [
+                "runApp()",
+                "run()",
+                "flutter()",
+                ""
+            ],
+            "correctAnswer": "main()"
+        },
+        {
+            "question": "Which of the following used to develop the native hybrid app from a single codebase?",
+            "options": [
+                "React Native",
+                "Flutter",
+                "Both A and B",
+                "Keras"
+            ],
+            "correctAnswer": "Both A and B"
+        },
+        {
+            "question": "pubspec.yaml file does not contain?",
+            "options": [
+                "Project general settings",
+                "Project dependencies",
+                "Project language",
+                "Project assets"
+            ],
+            "correctAnswer": "Project language"
+        },
+        {
+            "question": "Which of the following are the advantages of Flutter?",
+            "options": [
+                "Cross-platform Development",
+                "Faster Development",
+                "Minimal code",
+                "All of the above"
+            ],
+            "correctAnswer": "All of the above"
+        },
+        {
+            "question": "pubspec.yaml file does not contain?",
+            "options": [
+                "Project general settings",
+                "Project dependencies",
+                "Project language",
+                "Project assets"
+            ],
+            "correctAnswer": ""
+        },
+        {
+            "question": "The examples of the Stateless widget are?",
+            "options": [
+                "Text",
+                "Row",
+                "Column",
+                "All of the above"
+            ],
+            "correctAnswer": "All of the above"
+        }
+    ]
+}
