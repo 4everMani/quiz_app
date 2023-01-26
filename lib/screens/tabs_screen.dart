@@ -26,13 +26,20 @@ class _TabsScreenState extends State<TabsScreen> {
                     end: Alignment.bottomRight),
               ),
             ),
-            bottom: const TabBar(tabs: [
+            bottom: TabBar(tabs: [
               Tab(
                 icon: Icon(Icons.topic),
-                text: 'Quiz',
+                child: Text(
+                  'Quiz',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
               ),
               Tab(
                 icon: Icon(Icons.score),
+                child: Text(
+                  'Scores',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
               )
             ]),
           ),

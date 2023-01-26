@@ -9,10 +9,12 @@ class WelcomeNote extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.topRight,
+      height: 50,
+      margin: const EdgeInsets.only(top: 25, bottom: 15),
+      alignment: Alignment.topCenter,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: const [
           Text(
             'Hello',
