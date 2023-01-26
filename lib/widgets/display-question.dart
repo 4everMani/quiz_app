@@ -46,10 +46,18 @@ class _DisplayQuestionState extends State<DisplayQuestion> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: Column(children: [
         Container(
-          margin: EdgeInsets.only(bottom: 30, top: 20),
+          alignment: Alignment.topRight,
+          padding: const EdgeInsets.only(top: 15),
+          child: Text(
+            'Question Count: ${index + 1} / 10',
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(bottom: 30, top: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -63,27 +71,32 @@ class _DisplayQuestionState extends State<DisplayQuestion> {
         ),
         Row(
           children: [
-            Text(
-              '${index + 1}) ',
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 27),
-            ),
-            Text(
-              widget.questions[index].question,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+            Flexible(
+              fit: FlexFit.loose,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Text(
+                  widget.questions[index].question,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 25),
+                ),
+              ),
             )
           ],
         ),
         const SizedBox(
           height: 30,
         ),
-        Container(
-          height: 400,
-          child: ListView.builder(
-            itemBuilder: ((context, index) {
-              return Option(widget.questions[this.index].options[index],
-                  index + 1, optionClicked);
-            }),
-            itemCount: widget.questions[index].options.length,
+        Expanded(
+          child: SizedBox(
+            height: 400,
+            child: ListView.builder(
+              itemBuilder: ((context, index) {
+                return Option(widget.questions[this.index].options[index],
+                    index + 1, optionClicked);
+              }),
+              itemCount: widget.questions[index].options.length,
+            ),
           ),
         ),
       ]),
