@@ -26,7 +26,7 @@ class _TabsScreenState extends State<TabsScreen> {
                     end: Alignment.bottomRight),
               ),
             ),
-            bottom: TabBar(tabs: [
+            bottom: const TabBar(tabs: [
               Tab(
                 icon: Icon(Icons.topic),
                 child: Text(

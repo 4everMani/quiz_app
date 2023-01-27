@@ -53,7 +53,7 @@ class _DisplayQuestionState extends State<DisplayQuestion> {
           padding: const EdgeInsets.only(top: 15),
           child: Text(
             'Question Count: ${index + 1} / 10',
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
           ),
         ),
         Container(
@@ -78,7 +78,7 @@ class _DisplayQuestionState extends State<DisplayQuestion> {
                 child: Text(
                   widget.questions[index].question,
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 25),
+                      fontWeight: FontWeight.w500, fontSize: 25),
                 ),
               ),
             )
