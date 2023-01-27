@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/screens/question_screen.dart';
 import 'package:quiz_app/screens/quiz_screen.dart';
 import 'package:quiz_app/screens/tabs_screen.dart';
+import 'package:quiz_app/screens/welcome/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
-          body: const TabsScreen()),
+          body: const WelcomeScreen()),
       routes: {
         // '/': (ctx) => const CategoriesScreen(),
         QuestionScreen.routeName: (ctx) => QuestionScreen(),

@@ -25,6 +25,11 @@ class QuizBlocProvider extends StatelessWidget {
           if (state is QuizLoadedState) {
             return DisplayQuestion(questions: state.questions);
           }
+          if (state is QuizErrorState) {
+            return Center(
+              child: Text(state.error),
+            );
+          }
           return Container();
         }),
       ),
