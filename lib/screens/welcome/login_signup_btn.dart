@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quiz_app/blocs/auth/bloc/auth_bloc.dart';
 import '../../constants.dart';
 import '../../widgets/login/login.dart';
 import '../../widgets/signup/signup.dart';
@@ -7,9 +9,9 @@ class LoginSignupBtn extends StatelessWidget {
   const LoginSignupBtn({
     Key? key,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    final authBloc = BlocProvider.of<AuthBloc>(context);
     return Column(
       children: [
         Hero(
@@ -19,9 +21,10 @@ class LoginSignupBtn extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) {
-                    return const Login();
-                  },
+                  builder: (context) => BlocProvider.value(
+                    value: authBloc,
+                    child: const Login(),
+                  ),
                 ),
               );
             },
@@ -36,9 +39,10 @@ class LoginSignupBtn extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) {
-                  return const SignUp();
-                },
+                builder: (context) => BlocProvider.value(
+                  value: authBloc,
+                  child: const SignUp(),
+                ),
               ),
             );
           },

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/models/topic.dart';
 
-import '../screens/question_screen.dart';
+import '../../screens/quiz/question_screen.dart';
 
 class QuizItem extends StatelessWidget {
   final Topic topic;

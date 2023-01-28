@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/screens/question_screen.dart';
-import 'package:quiz_app/screens/quiz_screen.dart';
-import 'package:quiz_app/screens/tabs_screen.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quiz_app/blocs/auth/bloc/auth_bloc.dart';
+import 'package:quiz_app/repos/auth_repository.dart';
+import 'package:quiz_app/screens/quiz/tabs_screen.dart';
+import 'package:quiz_app/widgets/login/login.dart';
+import 'package:quiz_app/widgets/quiz/home.dart';
+import './screens/quiz/question_screen.dart';
 import 'package:quiz_app/screens/welcome/welcome_screen.dart';
 
 void main() {
@@ -19,24 +24,30 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-          appBar: AppBar(
-            leading: Icon(Icons.menu),
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            title: const Text("Quiz App"),
-            flexibleSpace: Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [Colors.deepOrange, Colors.purple],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight),
-              ),
-            ),
+      home: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) =>
+                AuthBloc(AuthRepository())..add(LoadAuthScreenEvent()),
           ),
-          body: const WelcomeScreen()),
+        ],
+        child: BlocBuilder<AuthBloc, AuthState>(builder: ((context, state) {
+          if (state is LoadAuthScreenState) {
+            return const WelcomeScreen();
+          }
+          if (state is LoggedInState) {
+            SchedulerBinding.instance.addPostFrameCallback((_) {
+              Navigator.of(context).pushReplacementNamed(
+                Home.homeRoute,
+              );
+            });
+          }
+          return Container();
+        })),
+      ),
       routes: {
         // '/': (ctx) => const CategoriesScreen(),
+        Home.homeRoute: (ctx) => Home(),
         QuestionScreen.routeName: (ctx) => QuestionScreen(),
       },
     );

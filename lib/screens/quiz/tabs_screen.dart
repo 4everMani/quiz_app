@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/screens/quiz_screen.dart';
-import 'package:quiz_app/screens/result_screen.dart';
-import 'package:quiz_app/widgets/welcome_note.dart';
+import './quiz_screen.dart';
+import './result_screen.dart';
+import '../../widgets/quiz/welcome_note.dart';
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({super.key});
@@ -17,6 +17,7 @@ class _TabsScreenState extends State<TabsScreen> {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
+            automaticallyImplyLeading: false,
             title: const WelcomeNote(),
             flexibleSpace: Container(
               decoration: const BoxDecoration(

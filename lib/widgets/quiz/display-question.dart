@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:quiz_app/models/question.dart';
-import 'package:quiz_app/widgets/button_section.dart';
-import 'package:quiz_app/widgets/option.dart';
+import './button_section.dart';
+import './option.dart';
 
 class DisplayQuestion extends StatefulWidget {
   final List<Question> questions;

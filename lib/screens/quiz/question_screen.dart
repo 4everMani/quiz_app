@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:quiz_app/repos/quiz_repository.dart';
 
-import '../widgets/quiz_bloc_provider.dart';
+import '../../widgets/quiz/quiz_bloc_provider.dart';
 
 class QuestionScreen extends StatelessWidget {
   const QuestionScreen({super.key});

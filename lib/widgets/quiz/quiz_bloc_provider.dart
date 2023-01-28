@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quiz_app/widgets/display-question.dart';
-import '../blocs/quiz_blocs.dart';
-import '../blocs/quiz_events.dart';
-import '../blocs/quiz_state.dart';
-import '../repos/quiz_repository.dart';
+import './display-question.dart';
+import '../../blocs/quiz/quiz_blocs.dart';
+import '../../blocs/quiz/quiz_events.dart';
+import '../../blocs/quiz/quiz_state.dart';
+import '../../repos/quiz_repository.dart';
 
 class QuizBlocProvider extends StatelessWidget {
   const QuizBlocProvider({super.key});
