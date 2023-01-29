@@ -3,11 +3,10 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_app/blocs/auth/bloc/auth_bloc.dart';
 import 'package:quiz_app/repos/auth_repository.dart';
-import 'package:quiz_app/screens/quiz/tabs_screen.dart';
-import 'package:quiz_app/widgets/login/login.dart';
 import 'package:quiz_app/widgets/quiz/home.dart';
 import './screens/quiz/question_screen.dart';
 import 'package:quiz_app/screens/welcome/welcome_screen.dart';
+import 'widgets/error-display.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,6 +39,15 @@ class MyApp extends StatelessWidget {
               Navigator.of(context).pushReplacementNamed(
                 Home.homeRoute,
               );
+            });
+          }
+          if (state is AuthErrorState) {
+            SchedulerBinding.instance.addPostFrameCallback((_) {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  elevation: 0,
+                  backgroundColor: Colors.transparent,
+                  behavior: SnackBarBehavior.floating,
+                  content: ErrorDisplay(state.message)));
             });
           }
           return Container();

@@ -9,8 +9,21 @@ abstract class AuthState extends Equatable {
 
 class LoadAuthScreenState extends AuthState {}
 
-class LoggedInState extends AuthState {}
+class LoggedInState extends AuthState {
+  final User user;
+  const LoggedInState(this.user);
+
+  @override
+  List<Object> get props => [user];
+}
 
 class LogOutState extends AuthState {}
 
-class PopWelcomeScreenState extends AuthState {}
+class AuthErrorState extends AuthState {
+  final String message;
+  final String statusCode;
+  const AuthErrorState(this.message, this.statusCode);
+
+  @override
+  List<Object> get props => [message, statusCode];
+}

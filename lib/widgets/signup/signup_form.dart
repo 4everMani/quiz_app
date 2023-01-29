@@ -34,6 +34,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
   @override
   Widget build(BuildContext context) {
+    final authBloc = BlocProvider.of<AuthBloc>(context);
     return Form(
       key: _formKey,
       child: Column(
@@ -114,9 +115,10 @@ class _SignUpFormState extends State<SignUpForm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) {
-                    return const Login();
-                  },
+                  builder: (context) => BlocProvider.value(
+                    value: authBloc,
+                    child: const Login(),
+                  ),
                 ),
               );
             },

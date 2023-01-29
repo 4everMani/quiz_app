@@ -9,16 +9,28 @@ part 'auth_state.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthRepository _authRepository;
   AuthBloc(this._authRepository) : super(LoadAuthScreenState()) {
+    on<LoadAuthScreenEvent>((event, emit) => emit(LoadAuthScreenState()));
     on<SignUpEvent>((event, emit) async {
       try {
-        final username = await _authRepository.SignUp(event.signup);
-        emit(PopWelcomeScreenState());
-        emit(LoggedInState());
-        print(username);
+        final user = await _authRepository.signUp(event.signup);
+        emit(LoggedInState(user));
+        print(user);
       } catch (e) {
-        print(e);
+        final err = e.toString();
+        print(err);
+        emit(AuthErrorState(err, err));
       }
     });
-    on<LoadAuthScreenEvent>((event, emit) => emit(LoadAuthScreenState()));
+    on<LogInEvent>((event, emit) async {
+      try {
+        final user = await _authRepository.login(event.user);
+        emit(LoggedInState(user));
+        print(user);
+      } catch (e) {
+        final err = e.toString();
+        print(err);
+        emit(AuthErrorState(err, err));
+      }
+    });
   }
 }

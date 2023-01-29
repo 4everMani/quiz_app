@@ -5,6 +5,12 @@ class User {
   String email;
   String password;
   String? imageUrl;
+  String? mobileNo;
 
-  User({this.name, required this.email, required this.password, this.imageUrl});
+  User(
+      {this.name,
+      required this.email,
+      required this.password,
+      this.imageUrl,
+      this.mobileNo});
 }

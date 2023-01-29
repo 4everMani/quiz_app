@@ -16,13 +16,13 @@ class Login extends StatelessWidget {
         children: <Widget>[
           const LoginTopImage(),
           Row(
-            children: const [
-              Spacer(),
+            children: [
+              const Spacer(),
               Expanded(
                 flex: 8,
                 child: LoginForm(),
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ],

@@ -17,6 +17,12 @@ class SignUpEvent extends AuthEvent {
 
 class LoadAuthScreenEvent extends AuthEvent {}
 
-class LogInEvent extends AuthEvent {}
+class LogInEvent extends AuthEvent {
+  final User user;
+  const LogInEvent(this.user);
+
+  @override
+  List<Object> get props => [user];
+}
 
 class LogoutEvent extends AuthEvent {}
