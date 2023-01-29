@@ -27,3 +27,11 @@ class AuthErrorState extends AuthState {
   @override
   List<Object> get props => [message, statusCode];
 }
+
+class ImageChangeState extends AuthState {
+  final String imagePath;
+  const ImageChangeState(this.imagePath);
+
+  @override
+  List<Object> get props => [imagePath];
+}

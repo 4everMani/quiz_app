@@ -4,7 +4,9 @@ import './result_screen.dart';
 import '../../widgets/quiz/welcome_note.dart';
 
 class TabsScreen extends StatefulWidget {
-  const TabsScreen({super.key});
+  const TabsScreen(this.name);
+
+  final String name;
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
@@ -17,8 +19,9 @@ class _TabsScreenState extends State<TabsScreen> {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
+            toolbarHeight: 80,
             automaticallyImplyLeading: false,
-            title: const WelcomeNote(),
+            title: WelcomeNote(widget.name),
             flexibleSpace: Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(

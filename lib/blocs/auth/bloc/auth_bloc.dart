@@ -14,10 +14,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       try {
         final user = await _authRepository.signUp(event.signup);
         emit(LoggedInState(user));
-        print(user);
       } catch (e) {
         final err = e.toString();
-        print(err);
         emit(AuthErrorState(err, err));
       }
     });
@@ -25,12 +23,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       try {
         final user = await _authRepository.login(event.user);
         emit(LoggedInState(user));
-        print(user);
       } catch (e) {
         final err = e.toString();
-        print(err);
         emit(AuthErrorState(err, err));
       }
     });
+
+    on<ImageChangeEvent>(
+      (event, emit) {
+        emit(ImageChangeState(event.imagePath));
+      },
+    );
   }
 }

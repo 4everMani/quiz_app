@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quiz_app/screens/quiz/drawer_screen.dart';
 
+import '../../blocs/auth/bloc/auth_bloc.dart';
+import '../../models/user.dart';
 import '../../screens/quiz/tabs_screen.dart';
 
 class Home extends StatelessWidget {
@@ -9,22 +13,30 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: Icon(Icons.menu),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: const Text("Quiz App"),
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Colors.deepOrange, Colors.purple],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight),
+    final user = BlocProvider.of<AuthBloc>(context).state.props[0] as User;
+    return BlocBuilder<AuthBloc, AuthState>(
+      builder: (context, state) {
+        if (state is ImageChangeState) {
+          user.imageUrl = state.imagePath;
+        }
+        return Scaffold(
+          drawer: DrawerScreen(user),
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            title: const Text("Quiz App"),
+            flexibleSpace: Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    colors: [Colors.deepOrange, Colors.purple],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight),
+              ),
+            ),
           ),
-        ),
-      ),
-      body: const TabsScreen(),
+          body: TabsScreen(user.name!),
+        );
+      },
     );
   }
 }

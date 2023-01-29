@@ -25,4 +25,12 @@ class LogInEvent extends AuthEvent {
   List<Object> get props => [user];
 }
 
+class ImageChangeEvent extends AuthEvent {
+  final String imagePath;
+  const ImageChangeEvent(this.imagePath);
+
+  @override
+  List<Object> get props => [imagePath];
+}
+
 class LogoutEvent extends AuthEvent {}

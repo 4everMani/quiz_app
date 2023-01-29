@@ -20,9 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Raleway'),
       home: MultiBlocProvider(
         providers: [
           BlocProvider(
@@ -35,10 +33,16 @@ class MyApp extends StatelessWidget {
             return const WelcomeScreen();
           }
           if (state is LoggedInState) {
+            final authBloc = BlocProvider.of<AuthBloc>(context);
             SchedulerBinding.instance.addPostFrameCallback((_) {
-              Navigator.of(context).pushReplacementNamed(
-                Home.homeRoute,
-              );
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BlocProvider.value(
+                      value: authBloc,
+                      child: const Home(),
+                    ),
+                  ));
             });
           }
           if (state is AuthErrorState) {

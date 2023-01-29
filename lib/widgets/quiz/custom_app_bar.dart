@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class CustomAppBar extends StatelessWidget {
+class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final String title;
-  const CustomAppBar({required this.title});
+  final bool automaticallyImplyLeading;
+  const CustomAppBar(
+      {required this.title, required this.automaticallyImplyLeading});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu),
+        automaticallyImplyLeading: automaticallyImplyLeading,
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(title),
@@ -24,4 +26,8 @@ class CustomAppBar extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => Size.fromHeight(50);
 }
