@@ -30,8 +30,9 @@ class AuthErrorState extends AuthState {
 
 class ImageChangeState extends AuthState {
   final String imagePath;
-  const ImageChangeState(this.imagePath);
+  final User user;
+  const ImageChangeState(this.imagePath, this.user);
 
   @override
-  List<Object> get props => [imagePath];
+  List<Object> get props => [user, imagePath];
 }

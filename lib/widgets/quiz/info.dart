@@ -16,11 +16,11 @@ class Info extends StatelessWidget {
         children: [
           user.imageUrl!.contains('http')
               ? CircleAvatar(
-                  radius: 60,
+                  radius: 65,
                   backgroundImage: NetworkImage(user.imageUrl!),
                 )
               : CircleAvatar(
-                  radius: 60,
+                  radius: 65,
                   backgroundImage: FileImage(File(user.imageUrl!)),
                 ),
           Container(
@@ -33,14 +33,14 @@ class Info extends StatelessWidget {
                       : user.name!,
                   style: const TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
                   user.name!.contains(' ') ? user.name!.split(' ')[1] : '',
                   style: const TextStyle(
                       color: Colors.white,
-                      fontSize: 15,
+                      fontSize: 17,
                       fontWeight: FontWeight.bold),
                 )
               ],

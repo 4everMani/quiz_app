@@ -31,7 +31,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     on<ImageChangeEvent>(
       (event, emit) {
-        emit(ImageChangeState(event.imagePath));
+        final user = event.user;
+        user.imageUrl = event.imagePath;
+        emit(ImageChangeState(event.imagePath, user));
+      },
+    );
+    on<LogoutEvent>(
+      (event, emit) {
+        emit(LogOutState());
       },
     );
   }

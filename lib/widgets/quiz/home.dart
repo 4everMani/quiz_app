@@ -20,7 +20,7 @@ class Home extends StatelessWidget {
           user.imageUrl = state.imagePath;
         }
         return Scaffold(
-          // drawer: DrawerScreen(user),
+          drawer: DrawerScreen(user),
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,

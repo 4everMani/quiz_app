@@ -20,7 +20,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
   Widget build(BuildContext context) {
     final authBloc = BlocProvider.of<AuthBloc>(context);
     return Drawer(
-      width: 150,
+      width: 154,
       child: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -33,21 +33,6 @@ class _DrawerScreenState extends State<DrawerScreen> {
             Info(widget.user),
             const SizedBox(
               height: 10,
-            ),
-            const ListTile(
-              leading: Icon(
-                Icons.home,
-                size: 25,
-                color: Colors.white,
-              ),
-              title: Text(
-                "Home",
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
-              ),
-              onTap: null,
             ),
             ListTile(
               leading: const Icon(
@@ -86,10 +71,29 @@ class _DrawerScreenState extends State<DrawerScreen> {
                     color: Colors.white),
               ),
               onTap: null,
-            )
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.logout,
+                size: 25,
+                color: Colors.white,
+              ),
+              title: const Text(
+                "Logout",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+              onTap: (() => _logout()),
+            ),
           ],
         ),
       ),
     );
+  }
+
+  _logout() {
+    BlocProvider.of<AuthBloc>(context).add(LogoutEvent());
   }
 }

@@ -24,8 +24,9 @@ class _UserImagePickerState extends State<UserImagePicker> {
     if (pickedImage != null) {
       setState(() {
         _pickedImagePath = pickedImage.path;
+        final user = BlocProvider.of<AuthBloc>(context).state.props[0] as User;
         BlocProvider.of<AuthBloc>(context)
-            .add(ImageChangeEvent(_pickedImagePath));
+            .add(ImageChangeEvent(_pickedImagePath, user));
       });
     }
   }

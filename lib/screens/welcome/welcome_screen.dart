@@ -6,6 +6,8 @@ import 'welcome_image.dart';
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
 
+  static const String url = '/welcomepage';
+
   @override
   Widget build(BuildContext context) {
     return Background(
