@@ -3,6 +3,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_app/blocs/auth/bloc/auth_bloc.dart';
 import 'package:quiz_app/repos/auth_repository.dart';
+import 'package:quiz_app/screens/quiz/result_screen.dart';
 import 'package:quiz_app/widgets/quiz/home.dart';
 import './screens/quiz/question_screen.dart';
 import 'package:quiz_app/screens/welcome/welcome_screen.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
           if (state is LoadAuthScreenState) {
             return const WelcomeScreen();
           }
-          if (state is LoggedInState) {
+          if (state is LoggedInState || state is ImageChangeState) {
             final authBloc = BlocProvider.of<AuthBloc>(context);
             SchedulerBinding.instance.addPostFrameCallback((_) {
               Navigator.pushReplacement(

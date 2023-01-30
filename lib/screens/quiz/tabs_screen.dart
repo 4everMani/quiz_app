@@ -47,7 +47,7 @@ class _TabsScreenState extends State<TabsScreen> {
               )
             ]),
           ),
-          body: const TabBarView(children: [QuizScreen(), ResultScreen()]),
+          body: TabBarView(children: [QuizScreen(), ResultScreen()]),
         ));
   }
 }

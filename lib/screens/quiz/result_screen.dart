@@ -1,17 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/models/score.dart';
+import 'package:quiz_app/widgets/quiz/result.dart';
 
-class ResultScreen extends StatefulWidget {
-  const ResultScreen({super.key});
+class ResultScreen extends StatelessWidget {
+  ResultScreen();
 
-  @override
-  State<ResultScreen> createState() => _ResultScreenState();
-}
+  final scores = [
+    Score(7, 6, '', 'Java'),
+    Score(5, 3, '', 'DotNet'),
+    Score(9, 6, '', 'JavaScript'),
+    Score(8, 6, '', 'Flutter'),
+    Score(6, 6, '', 'Dart'),
+  ];
 
-class _ResultScreenState extends State<ResultScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('Result will be added soon'),
+      height: MediaQuery.of(context).size.height,
+      child: ListView.builder(
+        itemBuilder: ((context, index) {
+          print(scores[index].correctAnswer);
+          return Result(
+              correctAnswers: scores[index].correctAnswer,
+              questionAttempted: scores[index].questionAttempted,
+              topic: scores[index].topic);
+        }),
+        itemCount: scores.length,
+      ),
     );
   }
 }

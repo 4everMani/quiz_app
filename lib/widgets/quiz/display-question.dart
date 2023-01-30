@@ -52,7 +52,7 @@ class _DisplayQuestionState extends State<DisplayQuestion> {
           alignment: Alignment.topRight,
           padding: const EdgeInsets.only(top: 15),
           child: Text(
-            'Question Count: ${index + 1} / 10',
+            'Question ${index + 1} of 10',
             style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
           ),
         ),
