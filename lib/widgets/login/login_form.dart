@@ -6,11 +6,16 @@ import '../../models/user.dart';
 import '../../screens/welcome/already_have_an_account.dart';
 import '../signup/signup.dart';
 
-class LoginForm extends StatelessWidget {
+class LoginForm extends StatefulWidget {
   LoginForm({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
   final GlobalKey<FormState> _formKey = GlobalKey();
 
   final email = TextEditingController();

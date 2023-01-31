@@ -16,8 +16,9 @@ class Background extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
+        padding: EdgeInsets.only(top: 30),
         width: double.infinity,
-        height: MediaQuery.of(context).size.height,
+        // height: 900,
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[

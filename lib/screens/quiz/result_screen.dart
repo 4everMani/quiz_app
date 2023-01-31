@@ -5,6 +5,7 @@ import 'package:quiz_app/widgets/quiz/result.dart';
 class ResultScreen extends StatelessWidget {
   ResultScreen();
 
+  static const String resultTabUrl = '/result';
   final scores = [
     Score(7, 6, '', 'Java'),
     Score(5, 3, '', 'DotNet'),
@@ -19,7 +20,6 @@ class ResultScreen extends StatelessWidget {
       height: MediaQuery.of(context).size.height,
       child: ListView.builder(
         itemBuilder: ((context, index) {
-          print(scores[index].correctAnswer);
           return Result(
               correctAnswers: scores[index].correctAnswer,
               questionAttempted: scores[index].questionAttempted,

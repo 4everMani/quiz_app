@@ -8,7 +8,7 @@ import '../../widgets/quiz/quiz_bloc_provider.dart';
 class QuestionScreen extends StatelessWidget {
   const QuestionScreen({super.key});
 
-  static const routeName = '/category-meals';
+  static const routeName = '/category-question';
 
   @override
   Widget build(BuildContext context) {

@@ -8,6 +8,8 @@ class TabsScreen extends StatefulWidget {
 
   final String name;
 
+  static const String tabRout = '/tab';
+
   @override
   State<TabsScreen> createState() => _TabsScreenState();
 }
