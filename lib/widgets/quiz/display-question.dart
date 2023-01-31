@@ -75,9 +75,10 @@ class _DisplayQuestionState extends State<DisplayQuestion> {
               actions: [
                 TextButton(
                     onPressed: () {
-                      Navigator.of(context).pop();
+                      int count = 0;
+                      Navigator.of(context).popUntil((route) => count++ >= 2);
                     },
-                    child: const Text("Go to Result",
+                    child: const Text("Go to Home",
                         style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.w900)))
               ],
