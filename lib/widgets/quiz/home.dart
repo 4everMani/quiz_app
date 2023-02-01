@@ -34,7 +34,7 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
-          body: TabsScreen(user.name!),
+          body: TabsScreen(user),
         );
       },
     );

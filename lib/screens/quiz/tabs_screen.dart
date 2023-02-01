@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import '../../models/user.dart';
 import './quiz_screen.dart';
 import './result_screen.dart';
 import '../../widgets/quiz/welcome_note.dart';
 
 class TabsScreen extends StatefulWidget {
-  const TabsScreen(this.name);
+  const TabsScreen(this.user);
 
-  final String name;
+  final User user;
 
   static const String tabRout = '/tab';
 
@@ -23,7 +24,7 @@ class _TabsScreenState extends State<TabsScreen> {
           appBar: AppBar(
             toolbarHeight: 80,
             automaticallyImplyLeading: false,
-            title: WelcomeNote(widget.name),
+            title: WelcomeNote(widget.user.name!),
             flexibleSpace: Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -49,7 +50,10 @@ class _TabsScreenState extends State<TabsScreen> {
               )
             ]),
           ),
-          body: TabBarView(children: [QuizScreen(), ResultScreen()]),
+          body: TabBarView(children: [
+            QuizScreen(widget.user.email),
+            ResultScreen(widget.user.email)
+          ]),
         ));
   }
 }

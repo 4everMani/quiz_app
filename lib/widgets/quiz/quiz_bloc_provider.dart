@@ -7,7 +7,10 @@ import '../../blocs/quiz/quiz_state.dart';
 import '../../repos/quiz_repository.dart';
 
 class QuizBlocProvider extends StatelessWidget {
-  const QuizBlocProvider({super.key});
+  const QuizBlocProvider(this.email, this.topic);
+
+  final String email;
+  final String topic;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,8 @@ class QuizBlocProvider extends StatelessWidget {
             );
           }
           if (state is QuizLoadedState) {
-            return DisplayQuestion(questions: state.questions);
+            return DisplayQuestion(
+                questions: state.questions, email: email, topic: topic);
           }
           if (state is QuizErrorState) {
             return Center(

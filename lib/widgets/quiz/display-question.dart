@@ -1,16 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quiz_app/blocs/quiz/quiz_events.dart';
 import 'package:quiz_app/models/question.dart';
+import 'package:quiz_app/models/score.dart';
 import 'package:quiz_app/widgets/quiz/home.dart';
 import '../../blocs/auth/bloc/auth_bloc.dart';
+import '../../blocs/quiz/quiz_blocs.dart';
 import './button_section.dart';
 import './option.dart';
 
 class DisplayQuestion extends StatefulWidget {
   final List<Question> questions;
+  final String email;
+  final String topic;
 
-  DisplayQuestion({required this.questions});
+  DisplayQuestion(
+      {required this.questions, required this.email, required this.topic});
 
   @override
   State<DisplayQuestion> createState() => _DisplayQuestionState();
@@ -40,6 +46,9 @@ class _DisplayQuestionState extends State<DisplayQuestion> {
   void onSubmitQuiz(BuildContext context) {
     final wrongAnswer = attempted.length - correctAnswer.length;
     final totalScore = (correctAnswer.length * 1) - (wrongAnswer * 0.25);
+    var score = Score(attempted.length, correctAnswer.length, totalScore,
+        widget.email, widget.topic, DateTime.now());
+    BlocProvider.of<QuizBloc>(context).add(QuizSubmitEvent(score));
     showDialogBox(context, totalScore);
   }
 
@@ -49,7 +58,7 @@ class _DisplayQuestionState extends State<DisplayQuestion> {
         builder: (context) {
           return Container(
             child: AlertDialog(
-              icon: Icon(Icons.alarm_sharp),
+              icon: const Icon(Icons.alarm_sharp),
               backgroundColor: Color.fromARGB(255, 225, 231, 234),
               content: Container(
                   height: 80,
@@ -77,6 +86,7 @@ class _DisplayQuestionState extends State<DisplayQuestion> {
                     onPressed: () {
                       int count = 0;
                       Navigator.of(context).popUntil((route) => count++ >= 2);
+                      setState(() {});
                     },
                     child: const Text("Go to Home",
                         style: TextStyle(

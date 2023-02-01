@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import '../../models/user.dart';
 import '../../widgets/quiz/quiz_item.dart';
 import 'package:simple_icons/simple_icons.dart';
 
 import '../../models/topic.dart';
 
 class QuizScreen extends StatefulWidget {
-  const QuizScreen({super.key});
+  const QuizScreen(this.email);
+  final String email;
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -41,6 +43,7 @@ class _QuizScreenState extends State<QuizScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print(widget.email);
     return Container(
       height: 400,
       padding: const EdgeInsets.all(10),
@@ -50,6 +53,7 @@ class _QuizScreenState extends State<QuizScreen> {
         children: topics
             .map((topic) => QuizItem(
                   topic: topic,
+                  email: widget.email,
                 ))
             .toList(),
       ),

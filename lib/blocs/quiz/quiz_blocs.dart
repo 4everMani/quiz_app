@@ -17,5 +17,14 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
         emit(QuizErrorState(e.toString()));
       }
     });
+    on<QuizSubmitEvent>(
+      (event, emit) async {
+        try {
+          final _ = await _quizRepository.submitQuiz(event.score);
+        } catch (e) {
+          emit(QuizErrorState(e.toString()));
+        }
+      },
+    );
   }
 }

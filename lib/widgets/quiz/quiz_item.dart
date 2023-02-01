@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_app/models/topic.dart';
 
+import '../../blocs/quiz/quiz_blocs.dart';
+import '../../models/user.dart';
 import '../../screens/quiz/question_screen.dart';
 
 class QuizItem extends StatelessWidget {
   final Topic topic;
-  const QuizItem({required this.topic});
+  final String email;
+  const QuizItem({required this.topic, required this.email});
 
   void openQuiz(String topicName, BuildContext ctx) {
     Navigator.of(ctx).pushNamed(QuestionScreen.routeName,
-        arguments: {'topicName': topicName});
-    print(topicName);
+        arguments: {'topicName': topicName, 'email': email});
   }
 
   @override
