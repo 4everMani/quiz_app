@@ -16,6 +16,13 @@ class TabsScreen extends StatefulWidget {
 }
 
 class _TabsScreenState extends State<TabsScreen> {
+  // late TabController _tabController;
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _tabController = TabController(length: 2, vsync: this);
+  // }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -33,27 +40,33 @@ class _TabsScreenState extends State<TabsScreen> {
                     end: Alignment.bottomRight),
               ),
             ),
-            bottom: const TabBar(tabs: [
-              Tab(
-                icon: Icon(Icons.topic),
-                child: Text(
-                  'Quiz',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            bottom: TabBar(
+              tabs: const [
+                Tab(
+                  icon: Icon(Icons.topic),
+                  child: Text(
+                    'Quiz',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
                 ),
-              ),
-              Tab(
-                icon: Icon(Icons.score),
-                child: Text(
-                  'Scores',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                ),
-              )
-            ]),
+                Tab(
+                  icon: Icon(Icons.score),
+                  child: Text(
+                    'Scores',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                )
+              ],
+              onTap: (value) {
+                if (value == 1) {
+                  Navigator.of(context).pushNamed(ResultScreen.resultTabUrl,
+                      arguments: {'email': widget.user.email});
+                }
+              },
+            ),
           ),
-          body: TabBarView(children: [
-            QuizScreen(widget.user.email),
-            ResultScreen(widget.user.email)
-          ]),
+          body: TabBarView(
+              children: [QuizScreen(widget.user.email), Container()]),
         ));
   }
 }

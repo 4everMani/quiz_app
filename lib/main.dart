@@ -3,6 +3,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_app/blocs/auth/bloc/auth_bloc.dart';
 import 'package:quiz_app/repos/auth_repository.dart';
+import 'package:quiz_app/screens/quiz/result_screen.dart';
 import 'package:quiz_app/screens/quiz/tabs_screen.dart';
 import 'package:quiz_app/widgets/login/login.dart';
 import 'package:quiz_app/widgets/quiz/home.dart';
@@ -75,6 +76,7 @@ class MyApp extends StatelessWidget {
       routes: {
         // '/': (ctx) => const CategoriesScreen(),
         WelcomeScreen.url: (ctx) => const WelcomeScreen(),
+        ResultScreen.resultTabUrl: (ctx) => ResultScreen(),
         Home.homeRoute: (ctx) => Home(),
         QuestionScreen.routeName: (ctx) => QuestionScreen(),
       },
