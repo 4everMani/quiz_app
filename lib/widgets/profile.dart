@@ -26,9 +26,11 @@ class Profile extends StatelessWidget {
               children: [
                 const Text(
                   "Name : ",
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                 ),
-                Text(user.name!, style: TextStyle(fontSize: 20))
+                Text(user.name!,
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.w600))
               ],
             ),
           ),
@@ -38,22 +40,24 @@ class Profile extends StatelessWidget {
               children: [
                 const Text(
                   "Email : ",
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                 ),
-                Text(user.email, style: TextStyle(fontSize: 20))
+                Text(user.email,
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.w600))
               ],
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 8, left: 80),
+            margin: const EdgeInsets.only(top: 20, left: 80),
             child: Row(
               children: [
                 const Text(
                   "MobileNo : ",
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                 ),
                 user.mobileNo != null
-                    ? Text(user.mobileNo!, style: TextStyle(fontSize: 20))
+                    ? Text(user.mobileNo!, style: const TextStyle(fontSize: 20))
                     : const TextButton(
                         onPressed: null,
                         child: Text(

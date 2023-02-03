@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/widgets/quiz/calculation.dart';
 import '../../models/user.dart';
 import './quiz_screen.dart';
 import './result_screen.dart';
@@ -66,7 +67,7 @@ class _TabsScreenState extends State<TabsScreen> {
             ),
           ),
           body: TabBarView(
-              children: [QuizScreen(widget.user.email), Container()]),
+              children: [QuizScreen(widget.user.email), Calculation()]),
         ));
   }
 }

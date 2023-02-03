@@ -57,10 +57,6 @@ class AuthScreen extends StatelessWidget {
                         fontWeight: FontWeight.normal),
                   ),
                 )),
-                // Flexible(
-                //   flex: deviceSize.width > 600 ? 2 : 1,
-                //   child: AuthCard(),
-                // )
               ],
             ),
           ),

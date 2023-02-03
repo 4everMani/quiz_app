@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quiz_app/widgets/about/about.dart';
 import 'package:quiz_app/widgets/profile.dart';
 import 'package:quiz_app/widgets/quiz/info.dart';
 
@@ -57,20 +58,28 @@ class _DrawerScreenState extends State<DrawerScreen> {
                     ),
                   )),
             ),
-            const ListTile(
-              leading: Icon(
+            ListTile(
+              leading: const Icon(
                 Icons.info,
                 size: 25,
                 color: Colors.white,
               ),
-              title: Text(
+              title: const Text(
                 "About",
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
               ),
-              onTap: null,
+              onTap: (() => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BlocProvider.value(
+                        value: authBloc,
+                        child: const About(),
+                      ),
+                    ),
+                  )),
             ),
             ListTile(
               leading: const Icon(

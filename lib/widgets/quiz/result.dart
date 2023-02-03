@@ -128,7 +128,7 @@ class Result extends StatelessWidget {
                 children: [
                   Container(
                     margin: const EdgeInsets.only(left: 10, top: 20),
-                    child: Text("Total Score: ${score.totalScore}",
+                    child: Text("Total Score : ${score.totalScore}",
                         style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -136,7 +136,7 @@ class Result extends StatelessWidget {
                   ),
                   Container(
                     margin: const EdgeInsets.only(left: 15, top: 20),
-                    child: Text("Attempted: ${score.questionAttempted}",
+                    child: Text("Attempted : ${score.questionAttempted}",
                         style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -144,7 +144,7 @@ class Result extends StatelessWidget {
                   ),
                   Container(
                     margin: const EdgeInsets.only(left: 15, top: 20),
-                    child: Text("Correct: ${score.correctAnswer}",
+                    child: Text("Correct : ${score.correctAnswer}",
                         style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
