@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:quiz_app/models/score.dart';
+import 'package:quiz_app/widgets/quiz/result.dart';
 
 import '../models/question.dart';
 
@@ -28,6 +30,28 @@ class QuizRepository {
       }
     } catch (error) {
       rethrow;
+    }
+  }
+
+  Future<bool> submitQuiz(Score data) async {
+    const url =
+        'https://quiz-app-2fb27-default-rtdb.asia-southeast1.firebasedatabase.app/results.json';
+    final body = {
+      'questionAttempted': data.questionAttempted,
+      'correctAnswer': data.correctAnswer,
+      'totalScore': data.totalScore,
+      'email': data.email,
+      'topic': data.topic,
+      'submittedAt': data.submittedAt.toIso8601String()
+    };
+    final response = await http.post(Uri.parse(url), body: jsonEncode(body));
+    if (response.statusCode == 200) {
+      return true;
+    } else {
+      throw Exception({
+        'message': response.reasonPhrase,
+        'status code': response.statusCode
+      });
     }
   }
 }

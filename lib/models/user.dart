@@ -1,12 +1,16 @@
+import 'package:quiz_app/widgets/signup/signup.dart';
+
 class User {
-  String fiestName;
-  String lastName;
+  String? name;
   String email;
   String password;
+  String? imageUrl;
+  String? mobileNo;
 
   User(
-      {required this.fiestName,
-      required this.lastName,
+      {this.name,
       required this.email,
-      required this.password});
+      required this.password,
+      this.imageUrl,
+      this.mobileNo});
 }

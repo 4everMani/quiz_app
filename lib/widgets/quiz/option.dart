@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Option extends StatelessWidget {
   const Option(this.option, this.code, this.optionClicked);
 
-  final Function() optionClicked;
+  final Function(String) optionClicked;
 
   final String option;
 
@@ -34,7 +34,7 @@ class Option extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => optionClicked(),
+      onTap: () => optionClicked(option),
       child: Container(
         padding: const EdgeInsets.only(bottom: 12),
         height: 60,

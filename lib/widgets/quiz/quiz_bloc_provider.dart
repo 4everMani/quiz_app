@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quiz_app/widgets/display-question.dart';
-import '../blocs/quiz_blocs.dart';
-import '../blocs/quiz_events.dart';
-import '../blocs/quiz_state.dart';
-import '../repos/quiz_repository.dart';
+import './display-question.dart';
+import '../../blocs/quiz/quiz_blocs.dart';
+import '../../blocs/quiz/quiz_events.dart';
+import '../../blocs/quiz/quiz_state.dart';
+import '../../repos/quiz_repository.dart';
 
 class QuizBlocProvider extends StatelessWidget {
-  const QuizBlocProvider({super.key});
+  const QuizBlocProvider(this.email, this.topic);
+
+  final String email;
+  final String topic;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,13 @@ class QuizBlocProvider extends StatelessWidget {
             );
           }
           if (state is QuizLoadedState) {
-            return DisplayQuestion(questions: state.questions);
+            return DisplayQuestion(
+                questions: state.questions, email: email, topic: topic);
+          }
+          if (state is QuizErrorState) {
+            return Center(
+              child: Text(state.error),
+            );
           }
           return Container();
         }),
