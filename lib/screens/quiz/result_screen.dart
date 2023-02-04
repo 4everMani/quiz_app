@@ -20,8 +20,6 @@ class ResultScreen extends StatefulWidget {
 
 class _ResultScreenState extends State<ResultScreen> {
   Future<bool> _willPopScopeCall() async {
-    // int count = 0;
-    // Navigator.of(context).popUntil((route) => count++ >= 2);
     return true;
   }
 
@@ -92,10 +90,5 @@ class _ResultScreenState extends State<ResultScreen> {
         ),
       ),
     );
-  }
-
-  @override
-  bool get wantKeepAlive {
-    return true;
   }
 }

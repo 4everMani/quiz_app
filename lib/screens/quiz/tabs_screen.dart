@@ -17,13 +17,6 @@ class TabsScreen extends StatefulWidget {
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-  // late TabController _tabController;
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _tabController = TabController(length: 2, vsync: this);
-  // }
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

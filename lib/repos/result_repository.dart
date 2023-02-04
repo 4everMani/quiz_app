@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import '../models/score.dart';
 
 class ResultRepository {
+  /// fetching user result
   Future<List<Score>> getResults(String email) async {
     final url =
         'https://quiz-app-2fb27-default-rtdb.asia-southeast1.firebasedatabase.app/results.json?orderBy="email"&equalTo="${email}"';

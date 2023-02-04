@@ -1,11 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_app/blocs/quiz/quiz_events.dart';
 import 'package:quiz_app/models/question.dart';
 import 'package:quiz_app/models/score.dart';
-import 'package:quiz_app/widgets/quiz/home.dart';
-import '../../blocs/auth/bloc/auth_bloc.dart';
 import '../../blocs/quiz/quiz_blocs.dart';
 import './button_section.dart';
 import './option.dart';
@@ -27,6 +24,7 @@ class _DisplayQuestionState extends State<DisplayQuestion> {
   var attempted = [];
   var correctAnswer = [];
 
+  /// moving to previous question.
   void showPreviousQuestion() {
     if (index > 0) {
       setState(() {
@@ -35,6 +33,7 @@ class _DisplayQuestionState extends State<DisplayQuestion> {
     }
   }
 
+  /// moving to next question
   void showNextQuestion() {
     if (index < widget.questions.length - 1) {
       setState(() {
@@ -43,6 +42,7 @@ class _DisplayQuestionState extends State<DisplayQuestion> {
     }
   }
 
+  /// submitting quiz
   void onSubmitQuiz(BuildContext context) {
     final wrongAnswer = attempted.length - correctAnswer.length;
     final totalScore = (correctAnswer.length * 1) - (wrongAnswer * 0.25);
@@ -52,6 +52,7 @@ class _DisplayQuestionState extends State<DisplayQuestion> {
     showDialogBox(context, totalScore);
   }
 
+  /// showing dialog box
   Future<dynamic> showDialogBox(BuildContext context, double totalScore) {
     return showDialog(
         context: context,

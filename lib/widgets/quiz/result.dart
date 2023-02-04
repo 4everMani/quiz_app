@@ -9,6 +9,7 @@ class Result extends StatelessWidget {
   const Result({required this.score});
   final Score score;
 
+  /// get color as per score
   Color getColor(double percentage) {
     if (percentage > 0.9) {
       return Colors.green;

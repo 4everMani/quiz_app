@@ -6,6 +6,7 @@ class AuthRepository {
   static const String imageUrl =
       'https://media.istockphoto.com/id/1214428300/vector/default-profile-picture-avatar-photo-placeholder-vector-illustration.jpg?s=612x612&w=0&k=20&c=vftMdLhldDx9houN4V-g3C9k0xl6YeBcoB_Rk6Trce0=';
 
+  /// Signup method
   Future<User> signUp(User model) async {
     const url =
         'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBBgFLRXa6lEViI19dqsWy5alrE75l-b0o';
@@ -27,6 +28,7 @@ class AuthRepository {
     }
   }
 
+  /// Login method
   Future<User> login(User model) async {
     const url =
         'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBBgFLRXa6lEViI19dqsWy5alrE75l-b0o';
@@ -46,6 +48,7 @@ class AuthRepository {
     }
   }
 
+  /// Save user method
   Future<User> saveUser(User user) async {
     const url =
         'https://quiz-app-2fb27-default-rtdb.asia-southeast1.firebasedatabase.app/users.json';
@@ -69,6 +72,7 @@ class AuthRepository {
     }
   }
 
+  /// getUser method
   Future<User> getUser(String email) async {
     final url =
         'https://quiz-app-2fb27-default-rtdb.asia-southeast1.firebasedatabase.app/users.json?orderBy="email"&equalTo="${email}"';

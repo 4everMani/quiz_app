@@ -9,6 +9,7 @@ class Option extends StatelessWidget {
 
   final int code;
 
+  /// getting correct option
   String get optionCode {
     switch (code) {
       case 1:

@@ -19,6 +19,7 @@ class _UserImagePickerState extends State<UserImagePicker> {
   String _pickedImagePath = '';
   final ImagePicker _picker = ImagePicker();
 
+  /// Pick image from camera
   void _pickImage() async {
     final pickedImage = await _picker.pickImage(source: ImageSource.camera);
     if (pickedImage != null) {

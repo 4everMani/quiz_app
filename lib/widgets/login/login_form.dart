@@ -22,6 +22,7 @@ class _LoginFormState extends State<LoginForm> {
 
   final password = TextEditingController();
 
+  /// Start login process
   void startLoginProcess(BuildContext context) {
     if (!_formKey.currentState!.validate()) {
       return;

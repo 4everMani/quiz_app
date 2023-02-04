@@ -14,7 +14,6 @@ class ButtonSection extends StatelessWidget {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       elevation: 4,
-      // color: Color.fromARGB(255, 237, 85, 199),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
