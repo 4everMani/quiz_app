@@ -11,6 +11,7 @@ class QuizItem extends StatelessWidget {
   final String email;
   const QuizItem({required this.topic, required this.email});
 
+  /// moving to quiz screen
   void openQuiz(String topicName, BuildContext ctx) {
     Navigator.of(ctx).pushNamed(QuestionScreen.routeName,
         arguments: {'topicName': topicName, 'email': email});

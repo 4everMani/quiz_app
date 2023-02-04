@@ -16,20 +16,11 @@ class Background extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
-        padding: EdgeInsets.only(top: 30),
+        padding: const EdgeInsets.only(top: 30),
         width: double.infinity,
-        // height: 900,
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
-            // Positioned(
-            //   top: 0,
-            //   left: 0,
-            //   child: Image.asset(
-            //     topImage,
-            //     width: 120,
-            //   ),
-            // ),
             SafeArea(child: child),
           ],
         ),

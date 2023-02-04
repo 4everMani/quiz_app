@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quiz_app/models/user.dart';
 
 import 'package:quiz_app/repos/quiz_repository.dart';
 
@@ -17,7 +16,6 @@ class QuestionScreen extends StatelessWidget {
         ModalRoute.of(context)!.settings.arguments as Map<String, String>;
     final topicName = arguments['topicName'] ?? '';
     final email = arguments['email'];
-    print(email);
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,

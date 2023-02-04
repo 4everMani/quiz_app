@@ -8,6 +8,8 @@ import '../models/question.dart';
 class QuizRepository {
   final String topic;
   QuizRepository(this.topic);
+
+  /// Fetch Question from server
   Future<List<Question>> fetchQuestions() async {
     var url =
         'https://quiz-app-2fb27-default-rtdb.asia-southeast1.firebasedatabase.app/${topic.replaceAll(' ', '')}.json';
@@ -33,6 +35,7 @@ class QuizRepository {
     }
   }
 
+  /// Submit Quiz method
   Future<bool> submitQuiz(Score data) async {
     const url =
         'https://quiz-app-2fb27-default-rtdb.asia-southeast1.firebasedatabase.app/results.json';

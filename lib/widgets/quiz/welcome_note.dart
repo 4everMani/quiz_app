@@ -1,11 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quiz_app/models/user.dart';
-
-import '../../blocs/auth/bloc/auth_bloc.dart';
 
 class WelcomeNote extends StatelessWidget {
   final String name;

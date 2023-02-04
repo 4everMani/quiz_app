@@ -10,8 +10,8 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Background(
-      child: const SingleChildScrollView(
+    return const Background(
+      child: SingleChildScrollView(
         child: SafeArea(
           child: MobileWelcomeScreen(),
         ),
@@ -32,7 +32,7 @@ class MobileWelcomeScreen extends StatelessWidget {
       children: <Widget>[
         const WelcomeImage(),
         Row(
-          children: [
+          children: const [
             Spacer(),
             Expanded(
               flex: 8,

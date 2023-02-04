@@ -43,7 +43,6 @@ class _QuizScreenState extends State<QuizScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print(widget.email);
     return Container(
       height: 400,
       padding: const EdgeInsets.all(10),

@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            title: const Text("Quiz App"),
+            title: const Text("Quizmania"),
             flexibleSpace: Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
